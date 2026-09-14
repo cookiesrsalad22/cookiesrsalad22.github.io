@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucas Chaney — Resume</title>
+<meta name="description" content="Engineering resume for Lucas Chaney, Washington University in St. Louis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:  #ffffff;
+    --ink:    #000000;
+    --muted:  #55606b;
+    --accent: #00646e;
+    --rule:   #b9c2c7;
+    --flag:   #ffe9a8;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans:  "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: #e8eaec; }
+
+  body {
+    margin: 0;
+    padding: 2rem 1rem;
+    font-family: var(--sans);
+    font-size: 10.2pt;
+    line-height: 1.42;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 7.5in;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0.55in 0.6in 0.5in;
+    box-shadow: 0 1px 3px rgba(0,0,0,.14), 0 8px 26px rgba(0,0,0,.10);
+  }
+
+  /* ---------- header ---------- */
+
+  .head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.6rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 27pt;
+    line-height: 1.02;
+    letter-spacing: -0.016em;
+    margin: 0 0 .34rem;
+  }
+
+  .contact {
+    margin: 0;
+    font-size: 9.3pt;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .contact a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .contact .sep {
+    display: inline-block;
+    width: 1px;
+    height: .78em;
+    background: var(--rule);
+    margin: 0 .52em;
+    vertical-align: -.04em;
+  }
+
+  .qr {
+    margin: 0;
+    flex: 0 0 auto;
+    width: 82px;
+    text-align: center;
+  }
+  .qr svg { display: block; width: 82px; height: 82px; }
+  .qr figcaption {
+    margin-top: .28rem;
+    font-size: 6.6pt;
+    line-height: 1.25;
+    color: var(--muted);
+  }
+
+  /* ---------- sections ---------- */
+
+  section { margin-top: .92rem; }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 11.6pt;
+    letter-spacing: .004em;
+    color: var(--accent);
+    margin: 0 0 .44rem;
+  }
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .entry { margin-bottom: .62rem; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  h3 {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 10.5pt;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .when {
+    flex: 0 0 auto;
+    font-size: 9pt;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 9.9pt;
+    color: var(--muted);
+    margin: .04rem 0 .18rem;
+  }
+
+  ul {
+    margin: .2rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    padding-left: .82rem;
+    margin-bottom: .16rem;
+  }
+  li::before {
+    content: "";
+    position: absolute;
+    left: .1rem;
+    top: .56em;
+    width: 3px;
+    height: 3px;
+    background: var(--accent);
+  }
+
+  /* ---------- skills ---------- */
+
+  .skills { margin: 0; }
+  .skills div {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .13rem;
+  }
+  .skills dt {
+    flex: 0 0 5.6rem;
+    font-weight: 700;
+    font-size: 9.6pt;
+  }
+  .skills dd { margin: 0; }
+
+  a.ext { color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+
+  /* ---------- honors ---------- */
+
+  .honors li { margin-bottom: .2rem; }
+
+  /* ---------- placeholders to fill in ---------- */
+
+  mark.todo {
+    background: var(--flag);
+    color: #6b4a00;
+    padding: 0 .1em;
+    border-radius: 2px;
+    font-weight: 600;
+    box-decoration-break: clone;
+  }
+
+  /* ---------- print ---------- */
+
+  @page { size: letter; margin: 0.45in 0.55in; }
+
+  @media print {
+    html { background: #fff; }
+    body { padding: 0; font-size: 9.5pt; line-height: 1.35; }
+    .sheet {
+      max-width: none;
+      padding: 0;
+      box-shadow: none;
+    }
+    h1 { font-size: 24pt; }
+    .contact { font-size: 8.8pt; line-height: 1.6; }
+    .contact a { border-bottom: none; color: var(--muted); }
+    .qr, .qr svg { width: 74px; }
+    .qr svg { height: 74px; }
+    section { margin-top: .66rem; }
+    h2 { font-size: 11pt; margin-bottom: .34rem; break-after: avoid; }
+    .entry { margin-bottom: .46rem; }
+    h3 { font-size: 10pt; }
+    .sub { font-size: 9.3pt; margin: .02rem 0 .12rem; }
+    .when { font-size: 8.6pt; }
+    li { margin-bottom: .1rem; }
+    .skills dt { font-size: 9.1pt; }
+    .skills div { margin-bottom: .08rem; }
+    section, .entry, li { break-inside: avoid; }
+  }
+
+  @media (max-width: 620px) {
+    body { padding: .75rem .5rem; font-size: 10.6pt; }
+    .sheet { padding: 1.35rem 1.15rem 1.25rem; }
+    .head { flex-direction: column; align-items: flex-start; gap: .9rem; }
+    h1 { font-size: 23pt; }
+    .entry-head { flex-direction: column; gap: .05rem; }
+    .skills div { flex-direction: column; gap: 0; margin-bottom: .4rem; }
+    .skills dt { flex-basis: auto; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="head">
+    <div>
+      <h1>Lucas Chaney</h1>
+      <p class="contact">
+        St. Louis, MO<span class="sep"></span>314-800-9832<span class="sep"></span><a href="mailto:lucasmchaney@outlook.com">lucasmchaney@outlook.com</a><br>
+        <a href="https://www.linkedin.com/in/lucas-chaney-3bba03369/">linkedin.com/in/lucas-chaney</a>
+      </p>
+    </div>
+    <figure class="qr">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330"><path transform="scale(10)" stroke="#000" d="M0 0.5h7m2 0h6m1 0h6m1 0h1m2 0h7m-33 1h1m5 0h1m3 0h6m1 0h1m3 0h1m2 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h8m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m2 0h1m3 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h3m4 0h1m2 0h1m3 0h2m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m2 0h2m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h3m3 0h2m5 0h4m-25 1h1m1 0h5m3 0h1m2 0h3m1 0h1m4 0h1m1 0h1m1 0h5m-30 1h3m1 0h1m1 0h3m1 0h1m4 0h1m1 0h2m1 0h1m1 0h1m2 0h2m1 0h2m1 0h1m-33 1h3m2 0h2m2 0h2m4 0h2m1 0h1m2 0h1m2 0h2m2 0h1m1 0h1m-30 1h5m2 0h5m1 0h1m1 0h1m2 0h3m1 0h1m1 0h1m2 0h5m-32 1h1m3 0h3m2 0h2m6 0h2m3 0h3m1 0h3m-28 1h4m1 0h1m1 0h2m3 0h4m4 0h2m1 0h2m2 0h1m1 0h2m-33 1h2m4 0h2m2 0h2m2 0h1m2 0h1m2 0h1m1 0h1m1 0h8m-32 1h2m7 0h2m1 0h2m2 0h1m2 0h3m1 0h4m1 0h3m-30 1h2m2 0h2m1 0h2m1 0h1m5 0h1m1 0h1m2 0h1m1 0h2m1 0h2m3 0h1m-33 1h1m1 0h2m1 0h1m1 0h1m1 0h6m2 0h5m1 0h5m1 0h4m-30 1h6m1 0h6m1 0h1m2 0h1m5 0h3m1 0h2m-32 1h3m2 0h1m1 0h2m1 0h1m2 0h1m2 0h3m2 0h3m1 0h1m1 0h5m-31 1h1m4 0h1m1 0h2m1 0h4m1 0h1m2 0h1m4 0h1m2 0h3m-30 1h6m1 0h2m5 0h2m1 0h3m2 0h2m2 0h1m3 0h1m1 0h1m-33 1h1m2 0h2m1 0h2m1 0h1m1 0h3m1 0h2m3 0h1m4 0h1m3 0h1m1 0h1m-32 1h1m1 0h1m2 0h1m5 0h1m1 0h1m1 0h1m5 0h7m1 0h4m-33 1h1m1 0h3m1 0h1m2 0h3m2 0h2m1 0h3m2 0h1m1 0h5m-21 1h3m2 0h1m2 0h1m1 0h4m1 0h2m3 0h1m1 0h1m1 0h1m-33 1h7m8 0h2m1 0h1m4 0h2m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m1 0h8m4 0h5m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h2m2 0h1m1 0h1m3 0h1m1 0h1m3 0h6m-30 1h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h3m1 0h1m1 0h3m1 0h1m2 0h1m2 0h2m-33 1h1m1 0h3m1 0h1m1 0h1m4 0h1m3 0h1m3 0h7m2 0h1m-31 1h1m5 0h1m5 0h1m3 0h1m2 0h5m1 0h2m1 0h3m-31 1h7m1 0h1m2 0h3m3 0h1m4 0h1m1 0h2m1 0h1m3 0h1"/></svg>
+      <figcaption>Scan to view online</figcaption>
+    </figure>
+  </header>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Washington University in St. Louis</h3>
+        <span class="when">Expected May 2030</span>
+      </div>
+      <p class="sub">McKelvey School of Engineering &middot; St. Louis, MO</p>
+      <ul>
+        <li>Bachelor of Science in Biomedical Engineering</li>
+        <li>Coursework: Intro to Biomedical Engineering, General Chemistry I and Lab, Physics I and Lab, Calculus II</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Kirkwood High School</h3>
+        <span class="when">May 2026</span>
+      </div>
+      <p class="sub">Kirkwood, MO</p>
+      <ul>
+        <li>Advanced Placement coursework: Chemistry, Physics, Biology, Calculus AB, English Language, Psychology, U.S. Government, U.S. History</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical skills</h2>
+    <dl class="skills">
+      <div><dt>Design</dt><dd>SolidWorks (CSWA certification in progress, exam January 2027), 3D modeling, iterative prototyping</dd></div>
+      <div><dt>Programming</dt><dd>Python (certification in progress, exam January 2027)</dd></div>
+      <div><dt>Laboratory</dt><dd>Titration, chromatography, sample preparation, laboratory safety and documentation practices</dd></div>
+      <div><dt>Fabrication</dt><dd>Assistive-device modification, switch and circuit rewiring, mechanical assembly, hand and power tools</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Engineering projects</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Switch-Adapted Toys for Early Childhood Special Education</h3>
+        <span class="when">2026</span>
+      </div>
+      <p class="sub">Eagle Scout Service Project &middot; Special School District of St. Louis County</p>
+      <ul>
+        <li>Independently researched, designed, and managed a project that delivered <strong>12 switch-adapted toys</strong> to early childhood special education classrooms, giving students with limited motor function a way to play independently</li>
+        <li>Rewired commercial toys with accessible switch controls, matching each activation mechanism to user constraints on force, range of motion, and dexterity</li>
+        <li>Secured project funding from Walmart and directed a team of 8 Scout volunteers through sourcing, modification, assembly, and testing</li>
+        <li>Work profiled by the Special School District of St. Louis County <a class="ext" href="https://www.ssdmo.org/details/~board/headlines-amp-features-special-school-district-of-st-louis-county-358333/post/kirkwood-senior-creates-adapted-toys-for-early-childhood-students">(article)</a></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>FIRST Robotics Competition &mdash; Co-Captain</h3>
+        <span class="when">2025 &ndash; 2026</span>
+      </div>
+      <p class="sub">Kirkwood High School Robotics</p>
+      <ul>
+        <li>Co-led the team to the FIRST Championship, the organization's national competition</li>
+        <li>Coordinated work across design, build, and programming subgroups, allocating tasks and holding the team to a six-week build-season deadline</li>
+        <li>Mentored incoming members on CAD, shop fabrication practices, and competition procedure</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Customer Service Specialist &mdash; REI</h3>
+        <span class="when">May &ndash; August 2026</span>
+      </div>
+      <p class="sub">St. Louis, MO</p>
+      <ul>
+        <li>Advised customers on technical outdoor equipment, translating product specifications into recommendations matched to individual use cases</li>
+        <li>Resolved returns, repairs, and service issues in a high-volume retail environment</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Leadership and honors</h2>
+    <ul class="honors">
+      <li><strong>Eagle Scout</strong>, Boy Scouts of America &mdash; Troop 313, Greater St. Louis Area Council, 2026</li>
+      <li><strong>Campbell Family Scholarship</strong> &mdash; Kirkwood School District Foundation Named Awards, $20,000</li>
+      <li><strong>Varsity Racquetball</strong>, Kirkwood High School, 2023 &ndash; 2026 &mdash; three consecutive High School National Team Championships</li>
+    </ul>
+  </section>
+
+</main>
+</body>
+</html>
